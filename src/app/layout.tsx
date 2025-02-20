@@ -4,6 +4,7 @@ import "./globals.css";
 import AppWalletProvider from "@/components/shared/AppWalletProvider";
 import Navbar from "@/components/shared/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +31,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppWalletProvider>
-          <Navbar />
-          {children}
-        </AppWalletProvider>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppWalletProvider>
+            <Navbar />
+            {children}
+          </AppWalletProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

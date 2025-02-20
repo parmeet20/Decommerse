@@ -31,6 +31,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { Separator } from "@/components/ui/separator";
+import { useTheme } from "next-themes";
 
 const Profile = () => {
   const { publicKey, sendTransaction, signTransaction } = useWallet();
@@ -84,6 +85,8 @@ const Profile = () => {
       setIsDialogOpen(!isDialogOpen);
     }
   };
+  
+  const {theme} = useTheme();
 
   // Fetch transactions and set them in state
   const fetMyTxs = async () => {
@@ -124,7 +127,7 @@ const Profile = () => {
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
                 <Avatar className="h-12 w-12">
-                  <AvatarFallback className="bg-primary text-white">
+                  <AvatarFallback className={`${theme === "light"?"bg-primary text-white":"bg-slate-750 text-white"}`}>
                     {userState.username.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
