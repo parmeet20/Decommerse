@@ -25,7 +25,7 @@ const ProductList = () => {
       {publicKey && <Button onClick={() => fet()}>Products</Button>}
       {!publicKey && (
         <p className="text-slate-600 font-mono font-extrabold">
-          Login to view campaigns
+          Login to view products
         </p>
       )}
       <div className="flex p-10 flex-wrap gap-4">

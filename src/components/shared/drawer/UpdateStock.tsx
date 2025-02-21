@@ -86,7 +86,7 @@ const UpdateStock: React.FC<UpdateStockProps> = ({ pid, seller, st }) => {
               </Button>
 
               <div className="text-center space-y-1">
-                <div className="text-5xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+                <div className="text-5xl font-bold">
                   {stock}
                 </div>
                 <Label className="text-sm font-medium text-muted-foreground">
