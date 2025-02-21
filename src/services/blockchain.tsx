@@ -193,7 +193,7 @@ export const buyProduct = async (
       seller.toBuffer(),
       pid.toArrayLike(Buffer, "le", 8),
     ],
-    program.programId
+    program.programId,
   );
   const [transactionPda] = PublicKey.findProgramAddressSync(
     [
